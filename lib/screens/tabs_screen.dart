@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import '../widgets/main_drawer.dart';
 
 import '../screens/favorites_screen.dart';
 import '../screens/categories_screen.dart';
 
 class TabsScreen extends StatefulWidget {
-  const TabsScreen({Key key}) : super(key: key);
-
   @override
   State<TabsScreen> createState() => _TabsScreenState();
 }
@@ -30,6 +29,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]["title"]),
       ),
+      drawer: MainDrawer(),
       body: _pages[_selectedPageIndex]["page"],
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.white,
